@@ -1,0 +1,15 @@
+O nosso protocolo define 6 classes para tipos diferentes de mensagens
+	Sub - mensagem do tipo subscribe com o topico a qual se irá subscrever
+	Pub - mensagem do tipo publish com o tópico e valor
+	Ped - mensagem de pedido de lista de tópicos
+	Can - mensagem do tipo unsubscribe que cancela a subcrição a um dado tópico
+	ListMessage - mensagem que serve como resposta ao pedido da lista de tópicos
+	Register - mensagem que serve para o servidor saber qual é a serealização do consumer
+Cada mensagem tem uma função repr que retorna uma string em formato JSON, uma função picky que
+retorna um dicionário para codificação PICKLE
+
+A classe PubSub tem 6 métodos de criação de objetos mensagem.
+A função send_msg que codifica uma mensagem, na serealização específicada e para a socket dada
+A funcção recv_msg retorna uma mensagem depois de a descodificar. Cada mensagem será enviada/recebida
+ em 3 partes, a primeira sempre em apenas um byte será o tipo de serealização, a segunda parte em 2
+bytes será o tamanho da mensagem e a terceira parte vai ser a mensagem em si.
