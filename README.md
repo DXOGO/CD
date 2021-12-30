@@ -1,6 +1,4 @@
 # Distributed Computation 2020/2021
-Projects developed for Distributed Computation class 20/21
-
 
 All projects developed by:
 Diogo Cruz: [DXOGO](https://github.com/DXOGO)   
